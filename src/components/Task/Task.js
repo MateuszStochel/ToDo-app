@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-import TaskEditMode from "./TaskEditMode";
+import TaskEditMode from "./subcomponents/TaskEditMode";
 import "./Task.css";
 
 const Task = ({
@@ -29,17 +29,12 @@ const Task = ({
   };
 
   return (
-    <div>
+    <div className="task_wrapper">
       {editMode && (
         <TaskEditMode
           handleInput={handleInput}
           inputs={{ ...inputs }}
           editMode={editMode}
-          title={title}
-          description={description}
-          createdBy={createdBy}
-          handleDelete={handleDelete}
-          handleChange={handleChange}
           handleChangeInputs={handleChangeInputs}
           onCancelEdit={onCancelEdit}
           id={id}
@@ -47,13 +42,25 @@ const Task = ({
       )}
       {!editMode && (
         <>
-          <p>{title} </p>
-          <p>{description}</p>
-          <p>{createdBy}</p>
-          <div>
-            <button onClick={() => handleDelete(id)}>Delete</button>
-            <button onClick={() => handleChange(id, editMode)}>Edit</button>
-            <button>Done</button>
+          <div className="task_par_wrapper">
+            <p>{title} </p>
+            <p>{description}</p>
+            <p>{createdBy}</p>
+          </div>
+          <div className="task_buttons_wrapper">
+            <button
+              className="task_btn_danger"
+              onClick={() => handleDelete(id)}
+            >
+              Delete
+            </button>
+            <button
+              className="task_btn_edit"
+              onClick={() => handleChange(id, editMode)}
+            >
+              Edit
+            </button>
+            <button className="task_btn_success">Done</button>
           </div>
         </>
       )}

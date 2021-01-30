@@ -1,0 +1,36 @@
+.AddTask_wrapper {
+  margin-top: 50px;
+}
+
+.AddTask_form {
+  display: flex;
+}
+
+.AddTask_inputWrapper {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+}
+
+.AddTask_buttonsWrapper {
+  display: flex;
+  width: 25%;
+  justify-content: center;
+}
+
+.AddTask_btn_success {
+  background-color: green;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0 20px;
+  border-radius: 10px;
+}
+
+.AddTask_btn_danger {
+  background-color: red;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 2px;
+  border-radius: 10px;
+  padding: 0 20px;
+}

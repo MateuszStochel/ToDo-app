@@ -1,5 +1,6 @@
 import React from "react";
-import Task from "./Task";
+import Task from "./Task/Task";
+import "./TaskList.css";
 
 const TaskList = ({
   todos,
@@ -18,7 +19,18 @@ const TaskList = ({
     />
   ));
 
-  return <div>{TaskLists}</div>;
+  return (
+    <div>
+      <h1 className="TaskList__mainTitle">Todo App</h1>
+      <div className="TaskList__titles">
+        <h3>Title</h3>
+        <h3>Description</h3>
+        <h3>Created_By</h3>
+        <h3>Options</h3>
+      </div>
+      {TaskLists}
+    </div>
+  );
 };
 
 export default TaskList;

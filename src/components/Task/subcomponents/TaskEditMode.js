@@ -1,7 +1,11 @@
 import React from "react";
 
 const EditInput = ({ ...props }) => {
-  return <input type="text" {...props} />;
+  return (
+    <div className="AddTask_inputWrapper">
+      <input type="text" {...props} />
+    </div>
+  );
 };
 
 const TaskEditMode = ({
@@ -24,9 +28,16 @@ const TaskEditMode = ({
     <React.Fragment>
       {editInputs}
 
-      <div>
-        <button onClick={() => handleChangeInputs(id, inputs)}>Edit</button>
-        <button onClick={() => onCancelEdit(id)}>Cancel</button>
+      <div className="AddTask_buttonsWrapper">
+        <button
+          className="task_btn_edit"
+          onClick={() => handleChangeInputs(id, inputs)}
+        >
+          Edit
+        </button>
+        <button className="AddTask_btn_danger" onClick={() => onCancelEdit(id)}>
+          Cancel
+        </button>
       </div>
     </React.Fragment>
   );

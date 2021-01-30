@@ -49,7 +49,6 @@ const App = () => {
 
   return (
     <div>
-      <h1>Todo App</h1>
       <TaskList
         todos={todos}
         handleDelete={handleDelete}
